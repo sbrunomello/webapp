@@ -8,6 +8,7 @@ import com.brunomello.webapp.domain.Post;
 @Repository
 public interface PostRepository extends MongoRepository<Post, String> {
 
+
 	
 
 

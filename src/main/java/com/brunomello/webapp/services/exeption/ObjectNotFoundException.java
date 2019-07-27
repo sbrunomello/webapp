@@ -1,10 +1,10 @@
 package com.brunomello.webapp.services.exeption;
 
-public class ObjectNotFoundExeption extends RuntimeException{
+public class ObjectNotFoundException extends RuntimeException{
 
 	private static final long serialVersionUID = 1L;
 	
-	public ObjectNotFoundExeption(String msg) {
+	public ObjectNotFoundException(String msg) {
 		super (msg);
 	}
 

@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import com.brunomello.webapp.domain.User;
 import com.brunomello.webapp.dto.UserDTO;
 import com.brunomello.webapp.repository.UserRepository;
-import com.brunomello.webapp.services.exeption.ObjectNotFoundExeption;
+import com.brunomello.webapp.services.exeption.ObjectNotFoundException;
 
 @Service
 public class UserService {
@@ -23,7 +23,7 @@ public class UserService {
 	
 	public User findById(String id) {
 		Optional<User> obj = repo.findById(id);
-		return obj.orElseThrow(() -> new ObjectNotFoundExeption("Objeto não encontrado"));
+		return obj.orElseThrow(() -> new ObjectNotFoundException("Objeto não encontrado"));
 		}
 		
 		public User insert(User obj) {

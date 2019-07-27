@@ -11,6 +11,7 @@ import org.springframework.context.annotation.Configuration;
 import com.brunomello.webapp.domain.Post;
 import com.brunomello.webapp.domain.User;
 import com.brunomello.webapp.dto.AuthorDTO;
+import com.brunomello.webapp.dto.CommentDTO;
 import com.brunomello.webapp.repository.PostRepository;
 import com.brunomello.webapp.repository.UserRepository;
 
@@ -44,6 +45,12 @@ public class Instantiation implements CommandLineRunner {
 
 		
 		Post post1 = new Post(null, sdf.parse("21/03/2018"), "Hello World", "Teste de publicação", new AuthorDTO (maria));
+		
+		CommentDTO c1 = new CommentDTO("Testando comentario", sdf.parse("21/03/2019"), new AuthorDTO(alex));
+		CommentDTO c2 = new CommentDTO("Testando comentario2", sdf.parse("30/04/2019"), new AuthorDTO(bob));
+		CommentDTO c3 = new CommentDTO("Testando comentario3", sdf.parse("06/06/2019"), new AuthorDTO(maria));
+		
+		post1.getComments().addAll(Arrays.asList(c1, c2, c3));
 		
 		postRepository.saveAll(Arrays.asList(post1));
 		
